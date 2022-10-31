@@ -2,9 +2,14 @@
 //#include <bits/stdc++.h>
 using namespace std;
 
+
+//time for the generic
+
+
 //creating all of the related objects for the node
 class Node
-{
+{    
+
 public:
     int data;
 
@@ -13,7 +18,12 @@ public:
 
     //pointer to previous node
     Node* prev;
+
+    public:
+
 };
+
+
 
 
 void insertFront(Node** head_ref, int new_data)
@@ -147,9 +157,11 @@ void deleteBoV(Node** head_ref, int value)
 
 void printList(Node* node)
 {
+    //22 should be at the front and 95 should be at the back for the final print.
+
     Node* last;
 
-    cout << "The list contains \n";
+    cout << "\nThe list contains \n";
 
     while (node != NULL)
     {
@@ -162,6 +174,9 @@ void printList(Node* node)
 
 int main()
 {
+
+
+    /* CODE NOT NEEDED BECAUSE IT DOESN'T NEED TO BE ASKING FOR INPUTS
     int input;
     //start with the list empty
     Node* head = NULL;
@@ -210,6 +225,36 @@ int main()
 
     cout << "List created is: ";
     printList(head); 
+    */
+
+   Node* head = NULL;
+
+   //methods were designed to be given the head pointer
+   //then the data we want to insert into the node.
+
+   //insertion
+   insertFront(&head, 33);
+   insertFront(&head, 57);
+   insertEnd(&head, 85);
+   insertFront(&head, 95);
+
+   //print
+   printList(head);
+   
+    //Delete
+    deleteBoV(&head, 57);
+    deleteBoV(&head, 33);
+    deleteBoV(&head, 33);
+
+    //insert again
+    insertFront(&head, 22);
+
+    //delete again
+    deleteBoV(&head, 95);
+
+    //print again
+    printList(head);
+
 
     return 0;
 }

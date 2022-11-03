@@ -19,8 +19,6 @@ public:
     //pointer to previous node
     Node* prev;
 
-    public:
-
 };
 
 
